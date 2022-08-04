@@ -1,7 +1,7 @@
 #!/bin/bash
 
 GITHUB_USERNAME=$1
-SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+SCRIPT_DIR=$( dirname -- "$( readlink -f -- "$0"; )"; )
 FILE_PATH="$SCRIPT_DIR/kommit.sh"
 RUN_EVERY='*/1 * * * *'
 CRONJOB="$RUN_EVERY $FILE_PATH $1"
@@ -38,4 +38,4 @@ git push -u origin main --force
 ####################################################
 ####################################################
 ####################################################
-# 20220804161119
+# 20220804161905
