@@ -1,4 +1,4 @@
-Developed for Unix-based sytems.
+Developed for Unix-based systems.
 
 Pre-reqs:
 
