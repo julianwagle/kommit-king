@@ -1,21 +1,21 @@
 #!/bin/bash
 
-while getopts u:p: flag
+while getopts u:t: flag
 do
     case "${flag}" in
         u) GITHUB_USERNAME=${OPTARG};;
-        p) GITHUB_PASSWORD=${OPTARG};;
+        t) GITHUB_TOKEN=${OPTARG};;
     esac
 done
 echo "Username: $GITHUB_USERNAME";
-echo "Password: ${GITHUB_PASSWORD}";
-GITHUB_ORIGIN="https://${GITHUB_USERNAME}:${GITHUB_PASSWORD}@github.com/${GITHUB_USERNAME}/kommit-king.git"
+echo "Token: ${GITHUB_TOKEN}";
+GITHUB_ORIGIN="https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com/${GITHUB_USERNAME}/kommit-king.git"
 echo "Origin: $GITHUB_ORIGIN";
 
 SCRIPT_DIR=$( dirname -- "$( readlink -f -- "$0"; )"; )
 FILE_PATH="$SCRIPT_DIR/kommit.sh"
 RUN_EVERY='*/1 * * * *'
-CRONJOB="$RUN_EVERY $FILE_PATH -u ${GITHUB_USERNAME} -p ${GITHUB_PASSWORD}"
+CRONJOB="$RUN_EVERY $FILE_PATH -u ${GITHUB_USERNAME} -t ${GITHUB_TOKEN}"
 NOW=$(date +"%Y%m%d%H%M%S")
 echo $FILE_PATH
 cd $SCRIPT_DIR
@@ -52,4 +52,4 @@ git push -u origin main --force
 ####################################################
 ####################################################
 # 20220804170700
-# 20220804171500
+# 20220804171601
