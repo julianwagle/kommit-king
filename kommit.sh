@@ -1,6 +1,7 @@
 #!/bin/bash
 
 GITHUB_USERNAME=$1
+GITHUB_PASSWORD=$2
 git config --global user.name $GITHUB_USERNAME
 SCRIPT_DIR=$( dirname -- "$( readlink -f -- "$0"; )"; )
 FILE_PATH="$SCRIPT_DIR/kommit.sh"
@@ -28,7 +29,7 @@ sed -i '' -e '$ d' kommit.sh
 sh -c "echo '# $NOW' >> kommit.sh"
 
 git remote remove origin
-git remote set-url origin git@github.com:$GITHUB_USERNAME/kommit-king.git
+git remote add origin https://$GITHUB_USERNAME:$GITHUB_PASSWORD@github.com/$GITHUB_USERNAME/kommit-king.git
 # git remote add origin http://github.com/$GITHUB_USERNAME/kommit-king.git
 git add .
 git commit -m $NOW
@@ -42,4 +43,5 @@ git push -u origin main --force
 ####################################################
 ####################################################
 ####################################################
-# 20220804165900
+# 20220804170000
+# 20220804170000
