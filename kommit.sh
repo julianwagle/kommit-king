@@ -32,8 +32,7 @@ else
     rm mycron
 fi
 
-# Delete blank line at the bottom
-sed -i '' -e '$ d' kommit.sh
+
 # Delete the last line with the time
 sed -i '' -e '$ d' kommit.sh
 # Add the current time to the bottom
@@ -53,4 +52,4 @@ git push -u origin main --force
 ####################################################
 ####################################################
 # # # TIME BELOW  WILL CHANGE EVERY 10 MINUTES # # #
-# 20220804172600
+# 20220804172618
