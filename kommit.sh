@@ -23,8 +23,8 @@ if [[ "$CRONTAB" == *"$CRONJOB"* ]];
 then
   echo "Doing nothing (:"
 else
-    # Cron has not been set up yet. Likely first run
-    ##### ##### ##### #####
+    # Cron has not been set. First run
+    ##### ##### ##### #####  #####  #####
     # Grant permissions to the script
     sudo chmod +x $FILE_PATH
     # Create the privatre repo
@@ -53,8 +53,5 @@ git commit -m $NOW
 git branch -M main
 git push -u origin main --force
 
-
 # # # TIME BELOW  WILL CHANGE EVERY 10 MINUTES # # #
-# 20220804172700
-# 20220804172900
-# 20220804172900
+# 20220804172937
