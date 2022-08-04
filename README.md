@@ -1,6 +1,4 @@
-Developed for use on MacOS - likely works on other Unix-based systems.
-
-No intention of supporting Windows any time soon.
+Developed for Unix-based sytems.
 
 Pre-reqs:
 
