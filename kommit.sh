@@ -23,12 +23,14 @@ if [[ "$CRONTAB" == *"$CRONJOB"* ]];
 then
   echo "Doing nothing (:"
 else
-    # Cron has not been set up yet
-    # Likely first run
-    # Config everything here
+    # Cron has not been set up yet. Likely first run
+    ##### ##### ##### #####
+    # Grant permissions to the script
     sudo chmod +x $FILE_PATH
+    # Create the privatre repo
     gh repo create kommit-king --private
     git init
+    # Add cronjob to crontab
     crontab -l > mycron
     echo "$CRONJOB">> mycron
     crontab mycron
@@ -54,5 +56,5 @@ git push -u origin main --force
 
 # # # TIME BELOW  WILL CHANGE EVERY 10 MINUTES # # #
 # 20220804172700
-# 20220804172800
-# 20220804172800
+# 20220804172900
+# 20220804172900
