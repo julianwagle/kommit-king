@@ -8,7 +8,7 @@ do
     esac
 done
 echo "Username: $GITHUB_USERNAME";
-echo "Password: $GITHUB_PASSWORD";
+echo "Password: ${GITHUB_PASSWORD}";
 GITHUB_ORIGIN="https://${GITHUB_USERNAME}:${GITHUB_PASSWORD}@github.com/${GITHUB_USERNAME}/kommit-king.git"
 
 SCRIPT_DIR=$( dirname -- "$( readlink -f -- "$0"; )"; )
@@ -51,4 +51,4 @@ git push -u origin main --force
 ####################################################
 ####################################################
 # 20220804170700
-# 20220804170801
+# 20220804170823
