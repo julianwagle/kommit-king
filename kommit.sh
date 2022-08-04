@@ -28,7 +28,7 @@ git remote add origin https://github.com/$GITHUB_USERNAME/kommit-king.git
 git add .
 git commit -m $NOW
 git branch -M main
-git push -u origin main
+git push -u origin main --force
 
 # # I WILL CHANGE EVERY 10 MINUTES
-# 20220804141935
+# 20220804141953
