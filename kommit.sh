@@ -6,7 +6,7 @@ git config --global user.name $GITHUB_USERNAME
 SCRIPT_DIR=$( dirname -- "$( readlink -f -- "$0"; )"; )
 FILE_PATH="$SCRIPT_DIR/kommit.sh"
 RUN_EVERY='*/1 * * * *'
-CRONJOB="$RUN_EVERY $FILE_PATH $1"
+CRONJOB="$RUN_EVERY $FILE_PATH $1 $2"
 NOW=$(date +"%Y%m%d%H%M%S")
 echo $FILE_PATH
 cd $SCRIPT_DIR
@@ -43,5 +43,4 @@ git push -u origin main --force
 ####################################################
 ####################################################
 ####################################################
-# 20220804170000
-# 20220804170000
+# 20220804170039
