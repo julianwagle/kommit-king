@@ -1,7 +1,8 @@
 #!/bin/bash
 
 GITHUB_USERNAME=$1
-FILE_PATH="$(pwd)/kommit.sh"
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+FILE_PATH="$SCRIPT_DIR/kommit.sh"
 RUN_EVERY='*/1 * * * *'
 CRONJOB="$RUN_EVERY $FILE_PATH $1"
 NOW=$(date +"%Y%m%d%H%M%S")
@@ -37,4 +38,4 @@ git push -u origin main --force
 ####################################################
 ####################################################
 ####################################################
-# 20220804160752
+# 20220804161119
