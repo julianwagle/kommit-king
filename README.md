@@ -2,8 +2,10 @@ Developed for use on MacOS - likely works on other Unix-based systems.
 
 No intention of supporting Windows any time soon.
 
-Pre-req install:
-[Github CLI](https://cli.github.com/)
+Pre-reqs:
+
+- Install [Github CLI](https://cli.github.com/)
+- Generate a github personal access token. [Docs found here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
 
 Quick start:
 
