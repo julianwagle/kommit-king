@@ -1,12 +1,20 @@
 #!/bin/bash
 
-GITHUB_USERNAME=$1
-GITHUB_PASSWORD=$2
+while getopts u:p: flag
+do
+    case "${flag}" in
+        u) GITHUB_USERNAME=${OPTARG};;
+        p) GITHUB_PASSWORD=${OPTARG};;
+    esac
+done
+echo "Username: $GITHUB_USERNAME";
+echo "Password: $GITHUB_PASSWORD";
+
 git config --global user.name $GITHUB_USERNAME
 SCRIPT_DIR=$( dirname -- "$( readlink -f -- "$0"; )"; )
 FILE_PATH="$SCRIPT_DIR/kommit.sh"
 RUN_EVERY='*/1 * * * *'
-CRONJOB="$RUN_EVERY $FILE_PATH $1 $2"
+CRONJOB="$RUN_EVERY $FILE_PATH -u $GITHUB_USERNAME -p $GITHUB_PASSWORD"
 NOW=$(date +"%Y%m%d%H%M%S")
 echo $FILE_PATH
 cd $SCRIPT_DIR
@@ -45,5 +53,4 @@ git push -u origin main --force
 ####################################################
 # 20220804170100
 # 20220804170201
-# 20220804170300
-# 20220804170300
+# 20220804170401
