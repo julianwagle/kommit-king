@@ -15,6 +15,6 @@ bash kommit.sh -u <YOUR_GITHUB_USERNAME> -t <YOUR_GITHUB_TOKEN>
 
 You will now have your github profile updated every ten minutes while your computer is open and connected to the internet.
 
-You will look more and more baller over the next year.
+Congrats, in one year you will look like the ultimate baller.
 
 ![cook kid](https://media.giphy.com/media/xTiTngBQncyTMceuXK/giphy.gif)
