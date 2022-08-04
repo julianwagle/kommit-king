@@ -38,7 +38,8 @@ else
 fi
 
 
-# Delete the last line with the time
+# Delete the blank line and the line with the time
+sed -i '' -e '$ d' kommit.sh
 sed -i '' -e '$ d' kommit.sh
 # Add the current time to the bottom
 sh -c "echo '# $NOW' >> kommit.sh"
@@ -53,10 +54,4 @@ git commit -m $NOW
 git branch -M main
 git push -u origin main --force
 
-# # # TIME BELOW  WILL CHANGE EVERY 10 MINUTES # # #
-# 20220804173100
-# 20220804173200
-# 20220804173300
-# 20220804173400
-# 20220804173500
-# 20220804173500
+# 20220804173659
