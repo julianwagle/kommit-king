@@ -7,20 +7,16 @@ do
         t) GITHUB_TOKEN=${OPTARG};;
     esac
 done
-echo "Username: $GITHUB_USERNAME";
-echo "Token: ${GITHUB_TOKEN}";
-GITHUB_ORIGIN="https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com/${GITHUB_USERNAME}/kommit-king.git"
-echo "Origin: $GITHUB_ORIGIN";
 
+GITHUB_ORIGIN="https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com/${GITHUB_USERNAME}/kommit-king.git"
 SCRIPT_DIR=$( dirname -- "$( readlink -f -- "$0"; )"; )
 FILE_PATH="$SCRIPT_DIR/kommit.sh"
 RUN_EVERY='*/1 * * * *'
 CRONJOB="$RUN_EVERY $FILE_PATH -u ${GITHUB_USERNAME} -t ${GITHUB_TOKEN}"
 NOW=$(date +"%Y%m%d%H%M%S")
-echo $FILE_PATH
-cd $SCRIPT_DIR
 CRONTAB=$(crontab -l)
 
+cd $SCRIPT_DIR
 if [[ "$CRONTAB" == *"$CRONJOB"* ]]; 
 then
   echo "Cronjob already exists"
@@ -56,4 +52,5 @@ git push -u origin main --force
 # 20220804172000
 # 20220804172100
 # 20220804172200
-# 20220804172200
+# 20220804172300
+# 20220804172300
