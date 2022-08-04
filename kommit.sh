@@ -23,6 +23,9 @@ if [[ "$CRONTAB" == *"$CRONJOB"* ]];
 then
   echo "Doing nothing (:"
 else
+    # Cron has not been set up yet
+    # Likely first run
+    # Config everything here
     sudo chmod +x $FILE_PATH
     gh repo create kommit-king --private
     git init
@@ -51,4 +54,5 @@ git push -u origin main --force
 
 # # # TIME BELOW  WILL CHANGE EVERY 10 MINUTES # # #
 # 20220804172700
-# 20220804172700
+# 20220804172800
+# 20220804172800
