@@ -9,12 +9,12 @@ do
 done
 echo "Username: $GITHUB_USERNAME";
 echo "Password: $GITHUB_PASSWORD";
-GITHUB_ORIGIN="https://$GITHUB_USERNAME:$GITHUB_PASSWORD@github.com/$GITHUB_USERNAME/kommit-king.git"
+GITHUB_ORIGIN="https://${GITHUB_USERNAME}:${GITHUB_PASSWORD}@github.com/${GITHUB_USERNAME}/kommit-king.git"
 
 SCRIPT_DIR=$( dirname -- "$( readlink -f -- "$0"; )"; )
 FILE_PATH="$SCRIPT_DIR/kommit.sh"
 RUN_EVERY='*/1 * * * *'
-CRONJOB="$RUN_EVERY $FILE_PATH -u $GITHUB_USERNAME -p $GITHUB_PASSWORD"
+CRONJOB="$RUN_EVERY $FILE_PATH -u ${GITHUB_USERNAME} -p ${GITHUB_PASSWORD}"
 NOW=$(date +"%Y%m%d%H%M%S")
 echo $FILE_PATH
 cd $SCRIPT_DIR
@@ -37,7 +37,7 @@ sed -i '' -e '$ d' kommit.sh
 sh -c "echo '# $NOW' >> kommit.sh"
 
 git remote remove origin
-git remote add origin "$GITHUB_ORIGIN"
+git remote add origin "${GITHUB_ORIGIN}"
 # git remote add origin http://github.com/$GITHUB_USERNAME/kommit-king.git
 git add .
 git commit -m $NOW
@@ -51,4 +51,4 @@ git push -u origin main --force
 ####################################################
 ####################################################
 # 20220804170700
-# 20220804170700
+# 20220804170751
