@@ -1,6 +1,7 @@
 #!/bin/bash
 
 GITHUB_USERNAME=$1
+git config --global user.name $GITHUB_USERNAME
 SCRIPT_DIR=$( dirname -- "$( readlink -f -- "$0"; )"; )
 FILE_PATH="$SCRIPT_DIR/kommit.sh"
 RUN_EVERY='*/1 * * * *'
@@ -9,6 +10,7 @@ NOW=$(date +"%Y%m%d%H%M%S")
 echo $FILE_PATH
 cd $SCRIPT_DIR
 CRONTAB=$(crontab -l)
+
 if [[ "$CRONTAB" == *"$CRONJOB"* ]]; 
 then
   echo "Cronjob already exists"
@@ -40,4 +42,4 @@ git push -u origin main --force
 ####################################################
 ####################################################
 # 20220804165001
-# 20220804165400
+# 20220804165413
