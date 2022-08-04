@@ -10,6 +10,7 @@ done
 echo "Username: $GITHUB_USERNAME";
 echo "Password: ${GITHUB_PASSWORD}";
 GITHUB_ORIGIN="https://${GITHUB_USERNAME}:${GITHUB_PASSWORD}@github.com/${GITHUB_USERNAME}/kommit-king.git"
+echo "Origin: $GITHUB_ORIGIN";
 
 SCRIPT_DIR=$( dirname -- "$( readlink -f -- "$0"; )"; )
 FILE_PATH="$SCRIPT_DIR/kommit.sh"
@@ -51,4 +52,4 @@ git push -u origin main --force
 ####################################################
 ####################################################
 # 20220804170700
-# 20220804170900
+# 20220804170945
