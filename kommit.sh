@@ -32,13 +32,18 @@ else
     rm mycron
 fi
 
+# Delete blank line at the bottom
 sed -i '' -e '$ d' kommit.sh
+# Delete the last line with the time
 sed -i '' -e '$ d' kommit.sh
+# Add the current time to the bottom
 sh -c "echo '# $NOW' >> kommit.sh"
 
+# Just incase a seperate origin was set
 git remote remove origin
 git remote add origin "${GITHUB_ORIGIN}"
-# git remote add origin http://github.com/$GITHUB_USERNAME/kommit-king.git
+
+# Add new changes & commit them & push them
 git add .
 git commit -m $NOW
 git branch -M main
@@ -49,4 +54,5 @@ git push -u origin main --force
 ####################################################
 # # # TIME BELOW  WILL CHANGE EVERY 10 MINUTES # # #
 ####################################################
-# 20220804172500
+####################################################
+# 20220804172550
