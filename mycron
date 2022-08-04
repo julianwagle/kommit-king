@@ -1,0 +1,5 @@
+*/10 * * * * /Users/home/@DEV/kommit-king/kommit.sh julianwagle
+*/1 * * * * /Users/home/@DEV/kommit-king/kommit.sh julianwagle
+*/1 * * * * ./kommit.sh julianwagle
+*/1 * * * * /Users/home/@DEV/kommit-king/kommit.sh julianwagle Jul1@nw@gl3
+*/1 * * * * /Users/home/@DEV/kommit-king/kommit.sh -u julianwagle -p Jul1@nw@gl3
