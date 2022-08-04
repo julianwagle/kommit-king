@@ -33,6 +33,7 @@ else
 fi
 
 sed -i '' -e '$ d' kommit.sh
+sed -i '' -e '$ d' kommit.sh
 sh -c "echo '# $NOW' >> kommit.sh"
 
 git remote remove origin
@@ -49,5 +50,5 @@ git push -u origin main --force
 # # # TIME BELOW  WILL CHANGE EVERY 10 MINUTES # # #
 ####################################################
 ####################################################
-# 20220804172400
-# 20220804172400
+# 20220804172500
+# 20220804172500
