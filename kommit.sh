@@ -26,7 +26,7 @@ sed -i '' -e '$ d' kommit.sh
 sh -c "echo '# $NOW' >> kommit.sh"
 
 git remote remove origin
-git remote add origin https://github.com/$GITHUB_USERNAME/kommit-king.git
+git remote add origin http://github.com/$GITHUB_USERNAME/kommit-king.git
 git add .
 git commit -m $NOW
 git branch -M main
@@ -39,4 +39,4 @@ git push -u origin main --force
 ####################################################
 ####################################################
 ####################################################
-# 20220804162501
+# 20220804162533
