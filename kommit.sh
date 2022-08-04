@@ -7,6 +7,7 @@ RUN_EVERY='*/1 * * * *'
 CRONJOB="$RUN_EVERY $FILE_PATH $1"
 NOW=$(date +"%Y%m%d%H%M%S")
 echo $FILE_PATH
+cd $SCRIPT_DIR
 CRONTAB=$(crontab -l)
 if [[ "$CRONTAB" == *"$CRONJOB"* ]]; 
 then
@@ -38,4 +39,4 @@ git push -u origin main --force
 ####################################################
 ####################################################
 ####################################################
-# 20220804161905
+# 20220804162031
