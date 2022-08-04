@@ -13,7 +13,7 @@ done
 GITHUB_ORIGIN="https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com/${GITHUB_USERNAME}/kommit-king.git"
 SCRIPT_DIR=$( dirname -- "$( readlink -f -- "$0"; )"; )
 FILE_PATH="$SCRIPT_DIR/kommit.sh"
-RUN_EVERY='*/1 * * * *'
+RUN_EVERY='*/10 * * * *'
 CRONJOB="$RUN_EVERY $FILE_PATH -u ${GITHUB_USERNAME} -t ${GITHUB_TOKEN}"
 NOW=$(date +"%Y%m%d%H%M%S")
 CRONTAB=$(crontab -l)
@@ -54,4 +54,4 @@ git branch -M main
 git push -u origin main --force
 
 
-# 20220804174100
+# 20220804174201
