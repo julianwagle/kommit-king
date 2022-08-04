@@ -38,8 +38,7 @@ else
 fi
 
 
-# Delete the blank line and the line with the time
-sed -i '' -e '$ d' kommit.sh
+# Delete the line with the time
 sed -i '' -e '$ d' kommit.sh
 # Add the current time to the bottom
 sh -c "echo '# $NOW' >> kommit.sh"
@@ -53,4 +52,6 @@ git add .
 git commit -m $NOW
 git branch -M main
 git push -u origin main --force
-# 20220804173801
+
+
+# 20220804173835
