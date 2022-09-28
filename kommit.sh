@@ -14,8 +14,8 @@ echo "Github Username: $GITHUB_USERNAME"
 echo "Github Email: $GITHUB_EMAIL"
 echo "Github Token: $GITHUB_TOKEN"
 
-# git config --global user.email "${GITHUB_EMAIL}"
-# git config --global user.name "${GITHUB_USERNAME}"
+git config --global user.email ${GITHUB_EMAIL}
+git config --global user.name ${GITHUB_USERNAME}
 
 # # Set variables for the script
 GITHUB_ORIGIN="https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com/${GITHUB_USERNAME}/kommit-king.git"
@@ -63,4 +63,4 @@ git push -u origin main --force
 
 
 # 20220927203000
-# 20220927203222
+# 20220927203308
